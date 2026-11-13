@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FORMA — Submission Checklist</title>
+<style>
+  :root{
+    --bg:#f8f6f1; --surface:#fffdf8; --card:#ffffff; --line:#e2ded4;
+    --text:#111111; --muted:#565656; --accent:#111111;
+    --font:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    --body:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:2px 6px}
+  pre{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:18px 20px;overflow:auto}
+  pre code{background:none;border:0;padding:0}
+  header{border-bottom:1px solid var(--line);padding:18px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--bg);z-index:10}
+  .brand{font-family:var(--font);font-weight:700;letter-spacing:-.01em;font-size:20px;display:flex;align-items:center;gap:10px;text-decoration:none}
+  .brand::before{content:"";width:10px;height:10px;background:var(--accent);border-radius:2px}
+  .version{font-size:13px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+  .layout{display:grid;grid-template-columns:250px minmax(0,1fr);max-width:1240px;margin:0 auto;gap:48px;padding:48px 32px 96px}
+  nav{position:sticky;top:96px;align-self:start}
+  nav p{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+  nav a{display:block;padding:8px 0;color:var(--muted);text-decoration:none;font-size:14px;border-left:2px solid transparent;padding-left:12px}
+  nav a:hover{color:var(--text);border-left-color:var(--accent)}
+  main h1{font-family:var(--font);font-size:clamp(34px,4.4vw,52px);line-height:1.02;letter-spacing:-.02em;margin:0 0 16px;font-weight:700}
+  main h2{font-family:var(--font);font-size:28px;line-height:1.15;letter-spacing:-.01em;margin:56px 0 14px;padding-top:8px;border-top:1px solid var(--line);font-weight:700}
+  main h3{font-family:var(--font);font-size:18px;margin:26px 0 8px;font-weight:600}
+  main p, main li{color:var(--muted)}
+  main strong{color:var(--text)}
+  .lede{font-size:18px;color:var(--muted);max-width:62ch}
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+  th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--text);font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+  td{color:var(--muted)}
+  .note{border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:4px;padding:16px 18px;background:var(--surface);margin:20px 0}
+  .note p{margin:0;color:var(--muted)}
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:20px 0}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:20px}
+  .card h4{font-family:var(--font);margin:0 0 6px;font-size:16px;font-weight:600}
+  .card p{margin:0;font-size:14px}
+  .swatches{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
+  .sw{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:4px;padding:8px 12px;font-size:13px;background:var(--card)}
+  .sw i{width:16px;height:16px;border-radius:2px;display:inline-block;border:1px solid rgba(0,0,0,.08)}
+  footer{border-top:1px solid var(--line);padding:32px;color:var(--muted);font-size:14px;max-width:1240px;margin:0 auto}
+  @media (max-width:900px){
+    .layout{grid-template-columns:1fr;gap:24px;padding:32px 20px 64px}
+    nav{position:static}
+    .grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="brand" href="index.html">FORMA</a>
+  <span class="version">Submission · v1.0.5</span>
+</header>
+
+<div class="layout">
+  <nav>
+    <p>Contents</p>
+    <a href="#meta">Submission fields</a>
+    <a href="#pitch">Name and description</a>
+    <a href="#features">Feature list</a>
+    <a href="#shots">Screenshots</a>
+    <a href="#verify">Verified state</a>
+    <a href="#limits">Known constraints</a>
+    <a href="forma.html">Full documentation</a>
+  </nav>
+
+  <main id="top">
+    <h1>Submission checklist</h1>
+    <p class="lede">Everything the Theme Store form asks for, filled in. Values reflect the live store and the 1.0.5 package.</p>
+
+    <h2 id="meta">Submission fields</h2>
+    <table>
+      <tr><th>Theme package</th><td><code>forma-1.0.5.zip</code> (4.97 MB)</td></tr>
+      <tr><th>Theme name</th><td>FORMA</td></tr>
+      <tr><th>Demo store</th><td><code>https://czshopceshi.myshopify.com</code></td></tr>
+      <tr><th>Demo password</th><td><code>123456</code> (development store, password cannot be removed)</td></tr>
+      <tr><th>Documentation</th><td><code>https://chengzhikj.github.io/forma-theme-docs/</code></td></tr>
+      <tr><th>Support email</th><td><code>mitusky@aliyun.com</code></td></tr>
+      <tr><th>Base theme</th><td>Dawn 16.1.1, OS 2.0, no renamed core files</td></tr>
+      <tr><th>Currency / market</th><td>USD, United States</td></tr>
+    </table>
+
+    <div class="note">
+      <p>The demo store runs on a development plan, so Shopify keeps its storefront password switch locked. Reviewers should use the password above; the storefront itself is complete and live behind it.</p>
+    </div>
+
+    <h2 id="pitch">Name and description</h2>
+    <p><strong>FORMA</strong> — a warm, editorial theme for furniture, homeware and made-to-order studios. Cream and ink palette, Manrope typography, oversized display headings and generous whitespace put the product in focus.</p>
+    <p>Short listing line, if the form asks for one:</p>
+    <pre><code>A calm editorial storefront for furniture and board makers.</code></pre>
+
+    <h2 id="features">Feature list</h2>
+    <ul>
+      <li>Homepage hero as a single image or a slideshow of up to six slides, with per-slide copy, adjustable overlay and on-demand slide loading</li>
+      <li>Product row switchable between grid and drag-scrollable slider, with arrows and optional autoplay that pauses on hover, focus and tab blur</li>
+      <li>Collection pages with filtering, sorting and Dawn quick-add</li>
+      <li>Product page with variant picker, quantity rules, sticky add-to-cart and payment badges</li>
+      <li>Editorial blog index with two-column cards, fixed image height and excerpt</li>
+      <li>Ten custom homepage sections: hero, marquee, product row, categories, story, materials, gallery, testimonials, newsletter, journal</li>
+      <li>Five cream colour schemes, multi-column footer, collapsible mobile nav</li>
+      <li>Responsive from 320px up; WCAG AA contrast; <code>prefers-reduced-motion</code> respected</li>
+      <li>Self-hosted Manrope (SIL OFL), no third-party scripts</li>
+    </ul>
+
+    <h2 id="shots">Screenshots</h2>
+    <table>
+      <tr><th>File</th><th>Page</th><th>Notes</th></tr>
+      <tr><td><a href="screenshots/01-home.png">01-home.png</a></td><td>Homepage</td><td>Hero slide 1, dot pagination, announcement bar</td></tr>
+      <tr><td><a href="screenshots/02-collection.png">02-collection.png</a></td><td>Collection</td><td>Living room, filter and sort bar, four product cards</td></tr>
+      <tr><td><a href="screenshots/03-product.png">03-product.png</a></td><td>Product</td><td>Gallery, vendor, price, quantity, add to cart, buy it now</td></tr>
+      <tr><td><a href="screenshots/04-blog.png">04-blog.png</a></td><td>Blog index</td><td>Two published articles with dates and excerpts</td></tr>
+      <tr><td><a href="screenshots/05-cart.png">05-cart.png</a></td><td>Cart</td><td>Line item, quantity stepper, estimated total, checkout</td></tr>
+    </table>
+    <p>All five are 1440 × 900 at 2× device pixel ratio, captured from the live store at the 1.0.5 state.</p>
+
+    <h2 id="verify">Verified state</h2>
+    <table>
+      <tr><th>Check</th><th>Result</th></tr>
+      <tr><td><code>shopify theme check</code></td><td>165 files, 0 errors, 9 warnings (all inherited from Dawn)</td></tr>
+      <tr><td>Lighthouse, mobile</td><td>Performance 91–93, LCP 1.9 s, CLS 0, accessibility 100, SEO 100</td></tr>
+      <tr><td>Lighthouse, desktop</td><td>Performance 95–99, LCP 0.6 s</td></tr>
+      <tr><td>Best practices</td><td>73 — platform side: third-party cookies and a <code>customer-account</code> 400 from Shopify's own account app</td></tr>
+      <tr><td>Store policies</td><td>Refund, shipping, terms, legal notice all return 200 under <code>/policies/</code></td></tr>
+      <tr><td>Demo content</td><td>12 published products with 27 SKU-matched images, 7 collections, 4 pages, 2 blog posts</td></tr>
+      <tr><td>Asset licensing</td><td>15 images registered in <a href="IMAGE-LICENSES.md">IMAGE-LICENSES.md</a> (13 CC0, 1 CC BY 2.0 credited, 2 Unsplash-sourced from the same CC0 batch); Manrope under <a href="manrope-OFL.txt">SIL OFL 1.1</a></td></tr>
+    </table>
+
+    <h2 id="limits">Known constraints</h2>
+    <ul>
+      <li>Development store: storefront password is locked on, so the demo is shared with a password rather than public</li>
+      <li>Demo photography mixes studio cut-outs and lifestyle shots; a production store would use one consistent set</li>
+      <li>Best practices score is capped by Shopify's own storefront scripts, not by theme code</li>
+    </ul>
+
+    <footer>FORMA 1.0.5 · Dawn 16.1.1 base · <a href="forma.html">Documentation</a></footer>
+  </main>
+</div>
+
+</body>
+</html>

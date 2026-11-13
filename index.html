@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FORMA — Theme Documentation</title>
+<style>
+  :root{
+    --bg:#f8f6f1; --surface:#fffdf8; --card:#ffffff; --line:#e2ded4;
+    --text:#111111; --muted:#565656; --accent:#111111;
+    --font:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    --body:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:2px 6px}
+  pre{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:18px 20px;overflow:auto}
+  pre code{background:none;border:0;padding:0}
+  header{border-bottom:1px solid var(--line);padding:18px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--bg);z-index:10}
+  .brand{font-family:var(--font);font-weight:700;letter-spacing:-.01em;font-size:20px;display:flex;align-items:center;gap:10px;text-decoration:none}
+  .brand::before{content:"";width:10px;height:10px;background:var(--accent);border-radius:2px}
+  .version{font-size:13px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+  .layout{display:grid;grid-template-columns:250px minmax(0,1fr);max-width:1240px;margin:0 auto;gap:48px;padding:48px 32px 96px}
+  nav{position:sticky;top:96px;align-self:start}
+  nav p{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+  nav a{display:block;padding:8px 0;color:var(--muted);text-decoration:none;font-size:14px;border-left:2px solid transparent;padding-left:12px}
+  nav a:hover{color:var(--text);border-left-color:var(--accent)}
+  main h1{font-family:var(--font);font-size:clamp(34px,4.4vw,52px);line-height:1.02;letter-spacing:-.02em;margin:0 0 16px;font-weight:700}
+  main h2{font-family:var(--font);font-size:28px;line-height:1.15;letter-spacing:-.01em;margin:56px 0 14px;padding-top:8px;border-top:1px solid var(--line);font-weight:700}
+  main h3{font-family:var(--font);font-size:18px;margin:26px 0 8px;font-weight:600}
+  main p, main li{color:var(--muted)}
+  main strong{color:var(--text)}
+  .lede{font-size:18px;color:var(--muted);max-width:62ch}
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+  th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--text);font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+  td{color:var(--muted)}
+  .note{border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:4px;padding:16px 18px;background:var(--surface);margin:20px 0}
+  .note p{margin:0;color:var(--muted)}
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:20px 0}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:20px}
+  .card h4{font-family:var(--font);margin:0 0 6px;font-size:16px;font-weight:600}
+  .card p{margin:0;font-size:14px}
+  .swatches{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
+  .sw{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:4px;padding:8px 12px;font-size:13px;background:var(--card)}
+  .sw i{width:16px;height:16px;border-radius:2px;display:inline-block;border:1px solid rgba(0,0,0,.08)}
+  footer{border-top:1px solid var(--line);padding:32px;color:var(--muted);font-size:14px;max-width:1240px;margin:0 auto}
+  @media (max-width:900px){
+    .layout{grid-template-columns:1fr;gap:24px;padding:32px 20px 64px}
+    nav{position:static}
+    .grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="brand" href="#top">FORMA</a>
+  <span class="version">Docs · v1.0.5</span>
+</header>
+
+<div class="layout">
+  <nav>
+    <p>Contents</p>
+    <a href="#overview">Overview</a>
+    <a href="#install">Install</a>
+    <a href="#sections">Homepage sections</a>
+    <a href="#theme-settings">Theme settings</a>
+    <a href="#navigation">Navigation</a>
+    <a href="#content">Products &amp; collections</a>
+    <a href="#motion">Motion &amp; performance</a>
+    <a href="#checks">Release checks</a>
+    <a href="#store">Theme Store checklist</a>
+    <a href="#changelog">Changelog</a>
+  </nav>
+
+  <main id="top">
+    <h1>FORMA</h1>
+    <p class="lede">A calm, editorial storefront for furniture and board makers. Cream surfaces, tight Manrope typography, and a homepage built from ten composable sections.</p>
+
+    <h2 id="overview">Overview</h2>
+    <table>
+      <tr><th>Base</th><td>Dawn 16.1.1 (Online Store 2.0)</td></tr>
+      <tr><th>Type</th><td>Manrope 400 / 500 / 600 / 700, self-hosted WOFF2 (SIL OFL)</td></tr>
+      <tr><th>Palette</th><td>Five cream schemes, ink text, no accent colour by default</td></tr>
+      <tr><th>Layout width</th><td>1400px content width, 1440px max canvas</td></tr>
+      <tr><th>Sections</th><td>10 custom home sections + Dawn defaults for product, collection, cart, search, blog, page</td></tr>
+      <tr><th>Locales</th><td>Storefront strings via <code>locales/</code>, section labels via <code>*.schema.json</code></td></tr>
+    </table>
+
+    <div class="note">
+      <p><strong>Before publishing:</strong> replace demo imagery in <code>assets/forma-img-*.jpg</code> with your own photography, or upload images in each section. Demo copy lives in <code>templates/index.json</code>.</p>
+    </div>
+
+    <h2 id="install">Install</h2>
+    <ol>
+      <li>Shopify admin → <strong>Online Store → Themes</strong>.</li>
+      <li><strong>Add theme → Upload zip</strong>, or push with the CLI: <code>shopify theme push --unpublished</code>.</li>
+      <li>Open <strong>Customize</strong>, check the homepage, then publish.</li>
+    </ol>
+
+    <h2 id="sections">Homepage sections</h2>
+    <table>
+      <tr><th>Section</th><th>What it does</th><th>Key settings</th></tr>
+      <tr><td><code>forma-hero</code></td><td>Eyebrow, oversized headline, CTA, 16:9 image with parallax</td><td>eyebrow, heading, text, cta_label, cta_link, image</td></tr>
+      <tr><td><code>forma-products</code></td><td>Product grid from a collection, up to 8 items</td><td>collection, products_to_show, heading, view_all_link</td></tr>
+      <tr><td><code>forma-sale</code></td><td>Dark promo band with copy and side image</td><td>heading, text, cta_label, cta_link, image, color_scheme</td></tr>
+      <tr><td><code>forma-favorites</code></td><td>Three "customer favourites" cards with rating and price</td><td>per block: category, subcategory, rating, title, price, link</td></tr>
+      <tr><td><code>forma-about</code></td><td>Image plus long copy and a four-item checklist</td><td>heading, text, image, four bullet blocks</td></tr>
+      <tr><td><code>forma-categories</code></td><td>Six room cards with image, title, description and link</td><td>per block: title, text, image, link</td></tr>
+      <tr><td><code>forma-cta</code></td><td>Centred call to action on a light card</td><td>eyebrow, heading, text, cta_label, cta_link</td></tr>
+      <tr><td><code>forma-testimonials</code></td><td>Three quote cards with stars</td><td>per block: quote, author, location, rating</td></tr>
+      <tr><td><code>forma-gallery</code></td><td>Four-up inspiration strip</td><td>heading, link, per block: image, link</td></tr>
+      <tr><td><code>forma-faq</code></td><td>Two-column FAQ with native <code>details</code> rows</td><td>heading, text, per block: question, answer</td></tr>
+    </table>
+
+    <h2 id="theme-settings">Theme settings</h2>
+    <h3>Colours</h3>
+    <p>Five schemes, all built on the same cream base. Scheme 1 is the page default, scheme 3 is used by the footer and the sale band.</p>
+    <div class="swatches">
+      <span class="sw"><i style="background:#f8f6f1"></i>Scheme 1 · #f8f6f1</span>
+      <span class="sw"><i style="background:#fffdf8"></i>Scheme 2 · #fffdf8</span>
+      <span class="sw"><i style="background:#111111"></i>Scheme 3 · #111111</span>
+      <span class="sw"><i style="background:#efece4"></i>Scheme 4 · #efece4</span>
+      <span class="sw"><i style="background:#e7e3d9"></i>Scheme 5 · #e7e3d9</span>
+    </div>
+    <div class="note">
+      <p>Colour scheme values must stay as <strong>RGB triplets</strong> (for example <code>248, 246, 241</code>). Hex values are silently ignored by Dawn's colour system.</p>
+    </div>
+
+    <h3>Typography</h3>
+    <p>Headings and body both use Manrope. The type scale is defined in <code>assets/forma.css</code> as CSS custom properties: h1 80 / h2 56 / h3 40 / h4 32 / h5 24 / h6 22, body 20 / 18 / 16 / 14.</p>
+
+    <h3>Layout</h3>
+    <table>
+      <tr><th>Setting</th><th>Value</th></tr>
+      <tr><td>Page width</td><td>1400 px</td></tr>
+      <tr><td>Section spacing</td><td>4 → 160 px scale</td></tr>
+      <tr><td>Corner radius</td><td>2 px inputs, 6 px cards, 40 px pills</td></tr>
+    </table>
+
+    <h2 id="navigation">Navigation</h2>
+    <p><code>header-group.json</code> carries the announcement bar, header and the main menu. The recommended menu is Home / Shop / Rooms (dropdown with the six room collections) / About / Contact.</p>
+    <p>The footer uses the <code>footer</code> menu: About, Shipping &amp; returns, FAQ, Contact, Search.</p>
+
+    <h2 id="content">Products &amp; collections</h2>
+    <ul>
+      <li>The homepage product grid reads the collection picked in the section settings (default <code>frontpage</code>).</li>
+      <li>Category cards link to <code>/collections/all</code> until you point them at real collections.</li>
+      <li>Product cards expect at least three images; the theme uses the first for grids and the rest for the gallery.</li>
+    </ul>
+
+    <h2 id="motion">Motion &amp; performance</h2>
+    <p><code>assets/forma-motion.js</code> adds three effects and disables all of them under <code>prefers-reduced-motion</code>:</p>
+    <ul>
+      <li>Intersection-based reveal with a 70 ms stagger per item</li>
+      <li>Parallax on the hero and about images (±20 px, 1.07 scale)</li>
+      <li>Hover states on cards, links and buttons</li>
+    </ul>
+    <p>All demo images are pre-compressed to 1200 px wide, quality 82–84, and total roughly 2 MB for the whole homepage.</p>
+
+    <h2 id="checks">Release checks</h2>
+    <pre><code>shopify theme check --path ./forma</code></pre>
+    <p>Current result: <strong>165 files inspected, 0 errors</strong>, 9 warnings — all inherited from Dawn (<code>UndefinedObject</code> on <code>scheme_classes</code> in the password and theme layouts, plus unused-assign and Liquid complexity hints).</p>
+
+    <h2 id="store">Theme Store checklist</h2>
+    <table>
+      <tr><th>Item</th><th>Status</th></tr>
+      <tr><td>theme check clean</td><td>0 errors</td></tr>
+      <tr><td>Locales for section schema</td><td>en.default + schema translations</td></tr>
+      <tr><td>Responsive down to 320 px</td><td>Verified by hand at 375 / 768 / 1440</td></tr>
+      <tr><td>Reduced motion support</td><td>Yes</td></tr>
+      <tr><td>Demo content</td><td>12 products with 2–3 images each, matched to the product type; 6 collections; 3 pages</td></tr>
+      <tr><td>Store policies</td><td>Refund, shipping, terms, legal notice written</td></tr>
+      <tr><td>Lighthouse</td><td>Desktop 84–94 / Mobile 81–97 performance, 100 accessibility, 100 SEO (best practices 73 is platform-side third-party cookies and console noise)</td></tr>
+      <tr><td>Licensed assets</td><td>Fonts OFL; demo photos from Wikimedia Commons — replace before submission</td></tr>
+    </table>
+
+    <h2 id="changelog">Changelog</h2>
+    <h3>1.0.5</h3>
+    <ul>
+      <li>Blog index uses a two-column grid with fixed image height so titles and excerpts stay above the fold</li>
+      <li>Product title scales down on narrow columns to avoid one-word-per-line wrapping</li>
+    </ul>
+    <h3>1.0.4</h3>
+    <ul>
+      <li>Hero gained a slideshow layout: full-bleed slides with per-slide copy, fade transitions, dot pagination and an adjustable overlay</li>
+      <li>Product row can switch between grid and scroll-snap slider, with arrows, drag scrolling and optional autoplay</li>
+      <li>Slideshow images load on demand so the first slide keeps the preloaded 800px crop on phones</li>
+    </ul>
+    <h3>1.0.3</h3>
+    <ul>
+      <li>Every section name, preset and colour option label now resolves through locale files, and the three remaining hard-coded storefront strings ("Sale", "View piece", product placeholder) moved into translations</li>
+      <li>Theme identity renamed to FORMA in the settings schema and preset, so the editor and store submission carry the theme name rather than the base theme name</li>
+      <li>Image licence register added for all shipped photography, with the one CC BY image credited and the font licence filed alongside it</li>
+      <li>Homepage hero preloaded with a 62 KB 800px crop for phones, cutting the LCP image from 183 KB and lifting mobile performance to 97 / desktop to 99 in Lighthouse</li>
+    </ul>
+    <h3>1.0.2</h3>
+    <ul>
+      <li>Demo product imagery rebuilt per SKU so each gallery shows the actual product type instead of shared stock scenes</li>
+      <li>About section image replaced with a workshop shot and recropped to the 4:5 column, removing the dimension mismatch</li>
+      <li>Footer now ships with Shop and Help menus plus a short brand blurb, so the demo store has real footer navigation</li>
+      <li>Hero image marked <code>fetchpriority="high"</code>; footer disclosure and caption colours raised to full text contrast (LCP 1.1s, accessibility 100)</li>
+      <li>Gift card variants switched to continue-selling so the demo card is not shown as sold out</li>
+    </ul>
+    <h3>1.0.1</h3>
+    <ul>
+      <li>Demo photography replaced with a brand-free, commercially usable set (CC0 / Unsplash licence)</li>
+      <li>Hero, about, category, gallery and favourites imagery recropped to their section ratios</li>
+      <li>Homepage SEO description moved into theme settings so merchants can edit it</li>
+      <li>Header logo set to a custom wordmark; product card imagery ratio locked to square</li>
+    </ul>
+    <h3>1.0.0</h3>
+    <ul>
+      <li>Initial release: ten homepage sections, five colour schemes, Manrope type scale</li>
+      <li>Motion layer with reduced-motion fallback</li>
+      <li>Demo content, policies and navigation wired for a furniture catalogue</li>
+    </ul>
+  </main>
+</div>
+
+<footer>
+  FORMA theme documentation · built on Dawn 16.1.1 · last updated November 2026
+</footer>
+
+</body>
+</html>

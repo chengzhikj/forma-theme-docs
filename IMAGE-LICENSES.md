@@ -1,4 +1,4 @@
-# Image licences — FORMA theme
+# Image licences — Tenon Editorial theme
 
 All photography shipped inside the theme (`assets/forma-img-*.jpg`) comes from Wikimedia
 Commons. Every file below is free for commercial use. One file requires attribution and is
